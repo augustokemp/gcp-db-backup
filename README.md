@@ -1,6 +1,9 @@
 ### Google Cloud SQL DB Exporter
 
-#### Tested on PostgreSQL Database
+This is an automated shell script that gets you an *GCloud SQL database dump* to update your development database container.
+It's a handful tool for working with a *PostgreSQL database* using *Docker Compose*.
+Besides, all your private configuration data is kept by yourself on an `.env` local file.
+
 
 #### Requirements
 - GCP SQL with a PostgreSQL database & a Google Bucket to store the database dump;
@@ -39,3 +42,6 @@ FILE_NAME="${TODAY}.sql"
 - `download`: Downloads the database dump from GBucket to the `$LOCAL_PATH`;
 - `prune --local`: Removes old database dumps from your PC;
 - `prune --remote`: Removes old database dumps from GBucket;
+
+#### Considerations
+- If you don't work with Docker, or just want the dump on your PC, it's perfectly fine to just run `bash export.sh && bash download.sh`
