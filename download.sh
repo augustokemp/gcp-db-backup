@@ -28,7 +28,7 @@ download_from_gcloud() {
             return 0
         else
             echo "[info] Downloading file from GCloud Storage..."
-            if gcloud storage cp "${remote_path}/${file_name}" "${local_path}/${file_name}"; then
+            if gsutil cp "${remote_path}/${file_name}" "${local_path}/${file_name}"; then
                 echo "[info] Finished downloading"
                 return 0
             else
